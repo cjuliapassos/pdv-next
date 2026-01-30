@@ -176,8 +176,15 @@ export default function ProductsPage() {
 
         {/* Modal */}
         {isModalOpen && (
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg p-6 w-full max-w-md">
+            <div 
+            className="fixed inset-0 flex items-center justify-center z-50"
+            style={{ backgroundColor: 'rgba(0, 0, 0, 0.55)' }}
+            onClick={handleCloseModal}
+            >
+            <div 
+                className="bg-white rounded-lg p-6 w-full max-w-md shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+            >
                 <h2 className="text-xl font-bold mb-4">
                 {editingProduct ? "Editar Produto" : "Novo Produto"}
                 </h2>
